@@ -1,0 +1,27 @@
+---
+- hosts: amlinux
+  tasks:
+    - name: Add several users
+      ansible.builtin.user:
+        name: "{{ item }}"
+        state: present
+        groups: "{{ admin_group }}"
+      loop: "{{ testusers }}"
+#        - testuser1
+#        - testuser2
+      vars:
+        admin_group: wheel
+        testusers:
+          - testuser1
+          - testuser2
+
+    # - name: Add several users - old style
+    #   ansible.builtin.user:
+    #     name: "{{ item }}"
+    #     state: present
+    #     groups: "{{ admin_group }}"
+    #   with_list:
+    #     - testuser1
+    #     - testuser2
+    #   vars:
+    #     admin_group: wheel        
