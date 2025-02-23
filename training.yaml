@@ -1,5 +1,11 @@
 ---
-- hosts: amlinux
+- hosts: rhosts
+  vars:
+   admin_group: wheel
+   testusers:
+     - testuser1
+     - testuser2
+
   tasks:
     - name: Add several users
       ansible.builtin.user:
@@ -9,19 +15,19 @@
       loop: "{{ testusers }}"
 #        - testuser1
 #        - testuser2
-      vars:
-        admin_group: wheel
-        testusers:
-          - testuser1
-          - testuser2
+#      vars:
+#        admin_group: wheel
+#        testusers:
+#          - testuser1
+#          - testuser2
 
-    # - name: Add several users - old style
-    #   ansible.builtin.user:
-    #     name: "{{ item }}"
-    #     state: present
-    #     groups: "{{ admin_group }}"
-    #   with_list:
-    #     - testuser1
-    #     - testuser2
-    #   vars:
-    #     admin_group: wheel        
+    - name: Add several users - old style
+      ansible.builtin.user:
+        name: "{{ item }}"
+        state: present
+        groups: "{{ admin_group }}"
+      with_list:
+        - testuser1
+        - testuser2
+#      vars:
+#        admin_group: wheel        
