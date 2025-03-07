@@ -15,21 +15,29 @@ public class TreePathExtractor {
         }
 
         String treedirect =
+                        "example_dir\n" +
+                        "├── file1.txt\n" +
+                        "└── outmasterdir\n" +
+                        "    ├── out\n" +
+                        "    │   └── production\n" +
+                        "    └── out2\n";
+        String treedirect2 =
                 "example_dir\n" +
-                "├── file1.txt\n" +
-                "├── outmasterdir\n" +
-                "│    └── out\n" +
-                "│        └── production\n" +
-                "│            └── tree2path\n" +
-                "│                ├── Main.class\n" +
-                "│                ├── TreeParser.class\n" +
-                "│                └── TreePathExtractor.class\n" +
-                "├── subdir\n" +
-                "│   ├── file3.txt\n" +
-                "│   └── file4.txt\n" +
-                "└── subdir2\n";
+                        "├── file1.txt\n" +
+                        "├── outmasterdir\n" +
+                        "│    └── out\n" +
+                        "│        └── production\n" +
+                        "│            └── tree2path\n" +
+                        "│                ├── Main.class\n" +
+                        "│                ├── TreeParser.class\n" +
+                        "│                └── TreePathExtractor.class\n" +
+                        "├── subdir\n" +
+                        "│   ├── file3.txt\n" +
+                        "│   └── file4.txt\n" +
+                        "└── subdir2\n";
 
-        paths = extractPathsFromTreeOutput2(treedirect);
+
+        paths = extractPathsFromTreeOutput2(treedirect2);
         for (String path : paths) {
             System.out.println(path);
         }
@@ -39,6 +47,7 @@ public class TreePathExtractor {
     public static List<String> extractPathsFromTreeOutput(String filePath) {
         List<String> paths = new ArrayList<>();
         Stack<String> dirStack = new Stack<>();
+        Map<Integer, String> depthMap = new HashMap<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String root = reader.readLine();
@@ -47,7 +56,7 @@ public class TreePathExtractor {
             }
 
             paths.add(root.trim());
-            dirStack.push(root.trim());
+            depthMap.put(0, root.trim());
 
             String line;
             while ((line = reader.readLine()) != null) {
@@ -55,25 +64,12 @@ public class TreePathExtractor {
                     continue;
                 }
 
-                int depth = (line.lastIndexOf("│") + 1) / 4;
-                if (depth == 0) {
-                    depth = (line.lastIndexOf("├") + 1) / 4;
-                }
-                if (depth == 0) {
-                    depth = (line.lastIndexOf("└") + 1) / 4;
-                }
-
-                while (dirStack.size() > depth + 1) {
-                    dirStack.pop();
-                }
-
+                int depth = (line.lastIndexOf(" ") + 1) / 4;
                 String cleanName = line.replaceAll("[│├──└── ]", "").trim();
-                String fullPath = (dirStack.size() > 0 ? dirStack.peek() + "/" : "") + cleanName;
+                String parentPath = depthMap.get(depth - 1);
+                String fullPath = parentPath + "/" + cleanName;
                 paths.add(fullPath);
-
-                if (line.contains("├") || line.contains("└")) {
-                    dirStack.push(fullPath);
-                }
+                depthMap.put(depth, fullPath);
             }
         } catch (IOException e) {
             System.err.println("Error reading file: " + e.getMessage());
@@ -83,7 +79,7 @@ public class TreePathExtractor {
 
     public static List<String> extractPathsFromTreeOutput2(String treeOutput) {
         List<String> paths = new ArrayList<>();
-        Stack<String> dirStack = new Stack<>();
+        Map<Integer, String> depthMap = new HashMap<>();
 
         String[] lines = treeOutput.split("\n");
         if (lines.length == 0 || lines[0].trim().isEmpty()) {
@@ -92,7 +88,7 @@ public class TreePathExtractor {
 
         String root = lines[0].trim();
         paths.add(root);
-        dirStack.push(root);
+        depthMap.put(0, root);
 
         for (int i = 1; i < lines.length; i++) {
             String line = lines[i];
@@ -100,25 +96,12 @@ public class TreePathExtractor {
                 continue;
             }
 
-            int depth = (line.lastIndexOf("│") + 1) / 4;
-            if (depth == 0) {
-                depth = (line.lastIndexOf("├") + 1) / 4;
-            }
-            if (depth == 0) {
-                depth = (line.lastIndexOf("└") + 1) / 4;
-            }
-
-            while (dirStack.size() > depth + 1) {
-                dirStack.pop();
-            }
-
+            int depth = (line.lastIndexOf(" ") + 1) / 4;
             String cleanName = line.replaceAll("[│├──└── ]", "").trim();
-            String fullPath = (dirStack.size() > 0 ? dirStack.peek() + "/" : "") + cleanName;
+            String parentPath = depthMap.get(depth - 1);
+            String fullPath = parentPath + "/" + cleanName;
             paths.add(fullPath);
-
-            if (line.contains("├") || line.contains("└")) {
-                dirStack.push(fullPath);
-            }
+            depthMap.put(depth, fullPath);
         }
         return paths;
     }
