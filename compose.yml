@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  web1:
+    image: nginx:alpine
+    networks:
+      - mynet
+
+  web2:
+    image: nginx:alpine
+    networks:
+      - mynet
+
+networks:
+  mynet:
+    driver: overlay
+
