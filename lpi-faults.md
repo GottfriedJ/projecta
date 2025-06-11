@@ -1,0 +1,19 @@
+- git diff --cached
+- git stash --> restore
+- Dockerfile: RUN cd tmp/
+- ansible items
+- Paketfilter --> cookies
+- docker stack
+- docker volume prune
+- prometheus url
+- Jenkinsfile location
+- SQL injection
+- filebeat setup
+- Vagrant
+- packer
+- chef solo
+- docker compose
+- object stores 
+- 2 Container mit demselben Volune
+- cloud-init
+- Jenkins build stage --> Anforderungen im Jenkinsfile
