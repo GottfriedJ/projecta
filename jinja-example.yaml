@@ -1,0 +1,37 @@
+---
+- name: Einfache Willkommensnachricht generieren
+  hosts: homehosts
+  gather_facts: yes # Wir brauchen ansible_date_time
+
+  tasks:
+    - name: Willkommensnachricht aus Template erstellen
+      ansible.builtin.template:
+        src: welcome_message.txt.j2
+        dest: "/tmp/welcome_{{ inventory_hostname }}.txt" # Speichern in /tmp
+        mode: '0644'
+
+#    - name: Inhalt der Nachricht anzeigen
+#      ansible.builtin.debug:
+#        msg: "{{ lookup('file', '/tmp/welcome_' + inventory_hostname + '.txt') }}"
+#      when: ansible_verbosity > 0 # Nur anzeigen, wenn -v verwendet wird
+
+    - name: Inhalt der Nachricht anzeigen (Base64 dekodiert)
+      ansible.builtin.slurp:
+        src: "/tmp/welcome_{{ inventory_hostname }}.txt"
+      register: welcome_slurp
+
+    - name: Nachricht anzeigen
+      ansible.builtin.debug:
+        msg: "{{ welcome_slurp['content'] | b64decode }}"
+      when: ansible_verbosity > 0
+
+    - name: Inhalt der Nachricht mit 'cat' anzeigen (command)
+      ansible.builtin.command: cat /tmp/welcome_{{ inventory_hostname }}.txt
+      register: welcome_cat
+      tags: easy_cmd
+
+    - name: Ausgabe anzeigen
+      ansible.builtin.debug:
+        msg: "{{ welcome_cat.stdout }}"
+      when: ansible_verbosity > 0
+      tags: easy_cmd
