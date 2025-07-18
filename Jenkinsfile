@@ -12,36 +12,36 @@ pipeline {
         }
 
         stage('Test maven Run') {
-            steps {
-                script {
-                    echo "Maven Version"
-                    sh 'mvn -version'
-                }
+          steps {
+            script {
+              echo "Maven Version"
+               sh 'mvn -version'
             }
+          }
         }
         //
-        stages {
+ 
 //    
-    stage('Compile') {
-      steps {
-         sh 'echo Ergebnis > result.txt'
-         stash includes: 'result.txt', name: 'build-output'
-      }
+        stage('Compile') {
+          steps {
+          sh 'echo Ergebnis > result.txt'
+          stash includes: 'result.txt', name: 'build-output'
+        }
     }
 //    
-    stage('Analyse') {
-      steps {
-        unstash 'build-output'
-        sh 'cat result.txt'
-      }
-    }
+       stage('Analyse') {
+         steps {
+          unstash 'build-output'
+          sh 'cat result.txt'
+         }
+       }
 //
-   stage('Build') {
-      steps {
-        sh 'echo "Build-Ausgabe" > build.txt'
-        archiveArtifacts artifacts: 'build.txt', fingerprint: true
+      stage('Build') {
+        steps {
+          sh 'echo "Build-Ausgabe" > build.txt'
+          archiveArtifacts artifacts: 'build.txt', fingerprint: true
+        }
       }
-    }
- }
-    }
+    
+  }
 }
