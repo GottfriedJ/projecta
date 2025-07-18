@@ -5,7 +5,7 @@ pipeline {
         stage('Test Java Zugriff') {
             steps {
                 script {
-                    echo "Teste Java-Verfügbarkeit superneu :-)"
+                    echo "Teste Java-Verfügbarkeit superduperneu :-)"
                     sh 'java -version'
                 }
             }
