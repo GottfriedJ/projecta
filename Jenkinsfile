@@ -22,14 +22,21 @@ pipeline {
         
         stage('Show docker version') {
           steps {
-          sh 'docker --version'
-        }
-    }
+            sh 'docker --version'
+          }
+       }
 //    
+       stage('Compile') {
+          steps {
+            sh 'echo Ergebnis > result.txt'
+            stash includes: 'result.txt', name: 'build-output'
+          }
+      }
+
        stage('Analyse') {
          steps {
-          unstash 'build-output'
-          sh 'cat result.txt'
+           unstash 'build-output'
+           sh 'cat result.txt'
          }
        }
 //
