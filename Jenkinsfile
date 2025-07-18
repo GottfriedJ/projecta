@@ -20,17 +20,7 @@ pipeline {
           }
         }
         
-        stage('Test maven Run') {
-          steps {
-            script {
-              echo "Maven Version"
-               sh 'mvn -version'
-            }
-          }
-        }
- 
-//    
-        stage('docker version') {
+        stage('Show docker version') {
           steps {
           sh 'docker --version'
         }
