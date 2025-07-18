@@ -1,4 +1,4 @@
-FROM my_mvn_jenkins:1
+FROM my_mvn_jenkins:latest
 USER root
 RUN apt-get install -y docker.io && usermod -aG docker jenkins
 USER jenkins

@@ -10,7 +10,7 @@ pipeline {
                 }
             }
         }
-
+//
         stage('Test maven Run') {
           steps {
             script {
@@ -32,7 +32,7 @@ pipeline {
             stash includes: 'result.txt', name: 'build-output'
           }
       }
-
+//
        stage('Analyse') {
          steps {
            unstash 'build-output'
@@ -40,10 +40,18 @@ pipeline {
          }
        }
 //
-      stage('Build') {
+      stage('Build Image') {
         steps {
           sh 'echo "Build-Ausgabe" > build.txt'
+          sh 'docker build -t my-hello -f Dockerfile_hello . >> build.txt'
           archiveArtifacts artifacts: 'build.txt', fingerprint: true
+        }
+
+      stage('Run Container') {
+        steps {
+          sh 'echo "Build-Ausgabe" > run.txt'
+          sh 'docker run -d --rm -name my-hello my-hello >> run.txt'
+          archiveArtifacts artifacts: 'run.txt', fingerprint: true
         }
       }
     
