@@ -2,11 +2,12 @@ version: "3.8"
 
 services:
   jenkins:
-    image: my_mvn_jenkins_dockersock:1
+    image: my_mvn_jenkins:1
     ports:
       - "50000:50000"  # optional: JNLP port
     volumes:
-      - /Users/LudwigU/docker_volumes/jenkins_home_data:/var/jenkins_home
+      - /home/uwe/docker_volumes/jenkins_home_data:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock  # Zugriff auf Host-Docker
     networks:
       - jenkins_net
 
