@@ -19,13 +19,20 @@ pipeline {
             }
           }
         }
-        //
+        
+        stage('Test maven Run') {
+          steps {
+            script {
+              echo "Maven Version"
+               sh 'mvn -version'
+            }
+          }
+        }
  
 //    
-        stage('Compile') {
+        stage('docker version') {
           steps {
-          sh 'echo Ergebnis > result.txt'
-          stash includes: 'result.txt', name: 'build-output'
+          sh 'docker --version'
         }
     }
 //    
