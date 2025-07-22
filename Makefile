@@ -1,3 +1,3 @@
 lint:
-yamllint docker-compose-mac.ymll
+	yamllint docker-compose-mac.yml
 
