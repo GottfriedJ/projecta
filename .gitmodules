@@ -1,0 +1,3 @@
+[submodule "projectb"]
+	path = projectb
+	url = git@github.com:GottfriedJ/projectb.git
