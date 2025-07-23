@@ -51,15 +51,18 @@ pipeline {
  //
       stage('Run Container') {
         steps {
-          sh 'echo "Start-Ausgabe" > run.txt'
-          try {
-            sh 'docker stop my-hello'
-            sh 'docker rm my-hello'
-            sh 'docker run --rm --name my-hello . >> run.txt'
-          }
-          catch (Exception e) {
-            echo 'Exception occurred: ' + e.toString()
-            sh 'Handle the exception!'
+          script {
+            try {
+                sh 'echo "Start-Ausgabe" > run.txt'
+                sh 'docker stop my-hello'
+                sh 'docker rm my-hello'
+                sh 'docker run --rm --name my-hello . >> run.txt'
+            } catch (err) {
+                echo "Fehler beim Bauen des Images: ${err}"
+                currentBuild.result = 'FAILURE'
+                        // Optional: build abbrechen
+                error("Abgebrochen wegen Docker-Fehler")
+            }
           }
           stash includes: 'run.txt', name: 'start-output'
           archiveArtifacts artifacts: 'run.txt', fingerprint: true
