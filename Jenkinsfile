@@ -52,7 +52,7 @@ pipeline {
       stage('Run Container') {
         steps {
           sh 'echo "Start-Ausgabe" > run.txt'
-          sh 'docker run -d --rm -name my-hello my-hello . >> run.txt'
+          sh 'docker run -d --rm --name my-hello my-hello . >> run.txt'
           stash includes: 'run.txt', name: 'start-output'
           archiveArtifacts artifacts: 'run.txt', fingerprint: true
         }
@@ -60,7 +60,7 @@ pipeline {
 
        stage('Analyse 2') {
          steps {
-     //      unstash 'build-output'
+           unstash 'build-output'
            unstash 'build-image-output'
            unstash 'start-output'
            sh 'cat build.txt'
