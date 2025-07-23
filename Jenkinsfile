@@ -43,7 +43,7 @@ pipeline {
        stage('Build Image') {
          steps {
            sh 'echo "Build-Ausgabe" > build.txt'
-           sh 'echo $(docker build -t my-hello:${env.BUILD_NUMBER} -f Dockerfile_hello .) >> build.txt'
+           sh 'echo $(docker build -t my-hello:latest -f Dockerfile_hello .) >> build.txt'
            stash includes: 'build.txt', name: 'build-image-output'
            archiveArtifacts artifacts: 'build.txt', fingerprint: true
         }
@@ -52,7 +52,9 @@ pipeline {
       stage('Run Container') {
         steps {
           sh 'echo "Start-Ausgabe" > run.txt'
-          sh 'docker run --rm --name my-hello my-hello . >> run.txt'
+          sh 'docker stop my-hello'
+          sh 'docker rm my-hello'
+          sh 'docker run --rm --name my-hello . >> run.txt'
           stash includes: 'run.txt', name: 'start-output'
           archiveArtifacts artifacts: 'run.txt', fingerprint: true
         }
