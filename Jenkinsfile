@@ -42,28 +42,28 @@ pipeline {
 //
        stage('Build Image') {
          steps {
-           stash includes: 'build.txt', name: 'build-image-output'
            sh 'echo "Build-Ausgabe" > build.txt'
            sh 'docker build -t my-hello -f Dockerfile_hello . >> build.txt'
+           stash includes: 'build.txt', name: 'build-image-output'
            archiveArtifacts artifacts: 'build.txt', fingerprint: true
         }
       }
  //
       stage('Run Container') {
         steps {
-          stash includes: 'run.txt', name: 'start-output'
           sh 'echo "Start-Ausgabe" > run.txt'
           sh 'docker run -d --rm -name my-hello my-hello . >> run.txt'
+          stash includes: 'run.txt', name: 'start-output'
           archiveArtifacts artifacts: 'run.txt', fingerprint: true
         }
       }
 
        stage('Analyse 2') {
          steps {
-           unstash 'build-output'
+     //      unstash 'build-output'
            unstash 'build-image-output'
            unstash 'start-output'
-           sh 'cat result.txt'
+           sh 'cat build.txt'
           }
         }
 
