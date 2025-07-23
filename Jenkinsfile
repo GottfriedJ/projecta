@@ -56,7 +56,7 @@ pipeline {
                 sh 'echo "Start-Ausgabe" > run.txt'
                 //sh 'docker stop my-hello'
                 //sh 'docker rm my-hello'
-                sh 'docker run --rm --name my-hello . >> run.txt'
+                sh 'docker run --rm --name my-hello:latest . >> run.txt'
             } catch (err) {
                 echo "Fehler beim Bauen des Images: ${err}"
                 currentBuild.result = 'FAILURE'
