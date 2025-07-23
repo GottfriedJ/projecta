@@ -1,0 +1,147 @@
+Stages
+
+📋 Quiz: Docker Compose & Container Management
+Wähle bis zu 3 richtige Antworten pro Frage. Die Lösung findest du am Ende.
+
+Frage 1: Was ist ein Vorteil von Docker Volumes gegenüber Bind Mounts?
+
+ Sie können nur auf dem Host verwendet werden
+
+ Sie sind unabhängig vom Verzeichnisbaum des Hosts
+
+ Sie werden von Docker verwaltet und gesichert
+
+ Sie sind portabel zwischen Containern
+
+ Sie erlauben keinen Datenzugriff vom Host aus
+
+Frage 2: Welche Bestandteile enthält typischerweise eine docker-compose.yml?
+
+ services
+
+ volumes
+
+ runlevels
+
+ networks
+
+ entrypoints
+
+Frage 3: Was bewirkt docker compose up -d?
+
+ Startet alle definierten Container im Hintergrund
+
+ Entfernt alle laufenden Container
+
+ Erstellt automatisch Netzwerke und Volumes
+
+ Öffnet die Compose-Datei im Editor
+
+ Löst abhängige Images automatisch auf
+
+Frage 4: Welche Schritte sind notwendig, um ein Image in eine private Registry zu pushen?
+
+ Mit docker login authentifizieren
+
+ Image mit docker tag markieren
+
+ Mit docker push hochladen
+
+ docker share verwenden
+
+ Registry als Volume mounten
+
+Frage 5: Welche Vorteile hat ein Multi-Stage Build?
+
+ Kleinere finale Images
+
+ Trennung von Build- und Laufzeitumgebung
+
+ Bessere Wartbarkeit der Dockerfiles
+
+ Unterstützt nur Alpine-basierte Images
+
+ Schnellere Laufzeit im Container
+
+Frage 6: Was ist buildx?
+
+ Erweiterung für plattformübergreifendes Bauen von Images
+
+ Legacy-Befehl aus Docker 1.x
+
+ Ermöglicht paralleles Bauen mit Caching
+
+ Wird nur unter Windows verwendet
+
+ Nützlich für ARM-Images
+
+Frage 7: Wozu dient depends_on in docker-compose?
+
+ Definiert Startreihenfolge von Containern
+
+ Ermöglicht Wartezeit auf abhängige Dienste
+
+ Beendet Container bei Abhängigkeiten automatisch
+
+ Ist rein deklarativ und kein Healthcheck-Ersatz
+
+ Wird nur bei Netzwerken benötigt
+
+Frage 8: Welche Einschränkungen gelten für Rootless Docker?
+
+ Kein Zugriff auf Port < 1024 ohne CAP_NET_BIND_SERVICE
+
+ Einschränkungen bei CGroup-Verwaltung
+
+ Funktioniert nur auf Mac
+
+ Eingeschränkter Netzwerkstack
+
+ Erfordert zwingend Kubernetes
+
+Frage 9: Welche Vorteile bietet docker network?
+
+ Kommunikation mehrerer Container
+
+ Ist veraltet und sollte nicht mehr genutzt werden
+
+ Isolation zwischen Services
+
+ Nutzung benutzerdefinierter Netzwerke
+
+ Nur im Swarm-Modus verfügbar
+
+Frage 10: Welche Kommandos gehören zum Lebenszyklus von Compose-Projekten?
+
+ docker compose up
+
+ docker compose down
+
+ docker compose logs
+
+ docker compose publish
+
+ docker compose install
+
+✅ Lösungen
+✅ 2,3,4
+
+✅ 1,2,4
+
+✅ 1,3,5
+
+✅ 1,2,3
+
+✅ 1,2,3
+
+✅ 1,3,5
+
+✅ 1,2,4
+
+✅ 1,2,4
+
+✅ 1,3,4
+
+✅ 1,2,3
+
+
