@@ -54,8 +54,8 @@ pipeline {
           script {
             try {
                 sh 'echo "Start-Ausgabe" > run.txt'
-                sh 'docker stop my-hello'
-                sh 'docker rm my-hello'
+                //sh 'docker stop my-hello'
+                //sh 'docker rm my-hello'
                 sh 'docker run --rm --name my-hello . >> run.txt'
             } catch (err) {
                 echo "Fehler beim Bauen des Images: ${err}"
