@@ -1,0 +1,28 @@
+services:
+  jenkins:
+    image: jenkins_with_docker:latest
+    user: root
+    privileged: true
+    environment:
+      - DOCKER_HOST=tcp://docker:2375
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - /Users/LudwigU/docker_volumes/jenkins_home_data:/var/jenkins_home
+    depends_on:
+      - docker
+
+  docker:
+    image: docker:dind
+    privileged: true
+    environment:
+      - DOCKER_TLS_CERTDIR=
+    ports:
+      - "2375:2375"
+    volumes:
+      - docker-data:/var/lib/docker
+
+volumes:
+#  jenkins_home:
+  docker-data:

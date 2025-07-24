@@ -3,7 +3,7 @@ version: "3.8"
 
 services:
   jenkins:
-    image: jenkins_with_docker:1
+    image: jenkins_with_docker:latest
     ports:
       - "50000:50000"  # optional: JNLP port
     volumes:

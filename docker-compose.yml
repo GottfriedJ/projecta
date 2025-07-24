@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   jenkins:
-    image: my_mvn_jenkins_dockersock:1
+    image: my_mvn_jenkins:1
     ports:
       - "50000:50000"  # optional: JNLP port
     volumes:
