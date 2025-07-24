@@ -1,4 +1,4 @@
 FROM ubuntu
 RUN apt-get update && apt-get install -y bash
-ENTRYPOINT ["/bin/bash", "-c", "echo 'Hello World'; dmesg"]
+ENTRYPOINT ["/bin/bash", "-c", "echo 'Hello World'; ls -alh"]
 #CMD /bin/bash -c "echo 'Hello World'; sleep infinity"
