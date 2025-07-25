@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  jenkins:
+    image: jenkins_with_docker:latest
+    environment:
+      - DOCKER_HOST=tcp://docker:2375
+    ports:
+      - "50000:50000"
+    volumes:
+      - /Users/LudwigU/docker_volumes/jenkins_home_data:/var/jenkins_home
+    networks:
+      - jenkins_net
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    networks:
+      - jenkins_net
+
+  docker:
+    image: docker:dind
+    environment:
+      - DOCKER_TLS_CERTDIR= # TLS wird so deaktiviert
+    ports:
+      - "2375:2375"
+    volumes:
+      - docker-data:/var/lib/docker
+    networks:
+      - jenkins_net
+
+volumes:
+#  jenkins_home_data:
+  docker-data:
+
+networks:
+  jenkins_net:
+    external: true
+    driver: overlay

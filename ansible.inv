@@ -6,8 +6,8 @@ schulung02  ansible_host=rhsfuglpi02.ecofis.de ansible_user=ludwigu
 schulung03  ansible_host=rhsfuglpi03.ecofis.de ansible_user=ludwigu
 
 [rhosts]
-amlinux ansible_host=3.70.166.41 ansible_user=ec2-user ansible_ssh_private_key_file=~/Documents/.awskeys/awskey.pem
-amubuntu ansible_host=3.68.186.24 ansible_user=ubuntu ansible_ssh_private_key_file=~/Documents/.awskeys/awsubuntukey.pem # ansible_python_interpreter=/usr/bin/python2
+amlinux ansible_host=18.193.115.219 ansible_user=ec2-user ansible_ssh_private_key_file=~/Documents/.awskeys/awskey.pem
+amubuntu ansible_host=3.121.208.222 ansible_user=ubuntu ansible_ssh_private_key_file=~/Documents/.awskeys/awsubuntukey.pem # ansible_python_interpreter=/usr/bin/python2
 
 [homehosts]
 sonne ansible_host=192.168.178.3 ansible_user=uwe
