@@ -1,0 +1,27 @@
+---
+- hosts: rhosts
+  vars:
+   common_packages:
+ #    - curl
+     - wget
+     - git
+ #   - docker.io
+  tasks:
+  - name: Pakete mit yum installieren
+    ansible.builtin.yum:
+      name: "{{ common_packages }}"
+      state: present
+    when: ansible_facts['pkg_mgr'] == 'yum'
+
+  - name: Pakete mit apt installieren
+    ansible.builtin.apt:
+      name: "{{ common_packages }}"
+      state: present
+      update_cache: yes
+    when: ansible_facts['pkg_mgr'] == 'apt'
+
+  - name: Pakete mit dnf installieren
+    ansible.builtin.dnf:
+      name: "{{ common_packages }}"
+      state: present
+    when: ansible_facts['pkg_mgr'] == 'dnf'

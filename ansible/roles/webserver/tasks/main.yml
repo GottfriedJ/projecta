@@ -1,0 +1,48 @@
+---
+- name: Install Apache
+  ansible.builtin.package:
+    name: "{{ apache_pkg }}"
+    state: present
+
+- name: Deploy index.html from template
+  ansible.builtin.template:
+    src: index.html.j2
+    dest: /var/www/html/index.html
+    owner: www-data
+    group: www-date
+    mode: '0644'
+  notify: Restart Apache
+#  tags: index
+
+- name: Debug Ausgabe des gerenderten Templates
+  debug:
+    msg: "{{ lookup('template', 'templates/index.html.j2') }}"
+  tags: index
+
+- name: Teste Apache-Konfiguration
+  ansible.builtin.shell: apachectl configtest
+  register: apache_test
+  ignore_errors: yes
+  tags: debug
+
+- name: Debug Apache configtest output
+  ansible.builtin.debug:
+    var: apache_test.stdout
+  tags: debug
+
+
+#
+#
+#- name: Copy index.html
+#  ansible.builtin.copy:
+#    src: index.html
+#    dest: /var/www/html/index.html
+#    owner: root
+#    group: root
+#    mode: '0644'
+
+- name: Ensure Apache is running and enabled
+  ansible.builtin.service:
+    name: "{{ apache_svc }}"
+    state: started
+    enabled: true

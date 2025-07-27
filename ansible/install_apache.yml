@@ -1,0 +1,6 @@
+---
+- name: Install Webserver
+  hosts: rhosts
+  become: true
+  roles:
+    - webserver
