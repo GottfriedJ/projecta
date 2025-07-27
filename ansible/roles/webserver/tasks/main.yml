@@ -4,12 +4,27 @@
     name: "{{ apache_pkg }}"
     state: present
 
+- name: Erstelle Gruppe www-data nur auf amlinux
+  ansible.builtin.group:
+    name: www-data
+    state: present
+  when: inventory_hostname == 'amlinux'
+
+- name: Erstelle Benutzer www-data nur auf amlinux
+  ansible.builtin.user:
+    name: www-data
+    group: www-data
+    shell: /usr/sbin/nologin
+    create_home: false
+    state: present
+  when: inventory_hostname == 'amlinux'
+
 - name: Deploy index.html from template
   ansible.builtin.template:
     src: index.html.j2
     dest: /var/www/html/index.html
     owner: www-data
-    group: www-date
+    group: www-data
     mode: '0644'
   notify: Restart Apache
 #  tags: index
