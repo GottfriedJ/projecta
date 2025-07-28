@@ -1,58 +1,94 @@
-# 🧪 Tag 9 – Quiz zu Terraform, Vagrant & Immutable Infrastructure
+🧩 Quiz zu Kubernetes (LPI-701-Stil)
+Hinweis: Jede Frage hat 1–3 richtige Antworten. Antworten am Ende.
 
-**Hinweis:** Wähle alle richtigen Antworten (max. 3 korrekt).
+1. Welche Komponenten gehören zum Kubernetes Control Plane?
+   A. kube-scheduler
+   B. kubelet
+   C. etcd
+   D. kube-proxy
+   E. controller-manager
 
----
+2. Was ist ein Pod in Kubernetes?
+   A. Ein Container-Orchestrierungs-Tool
+   B. Die kleinste deploybare Einheit
+   C. Eine Gruppe von einem oder mehreren Containern
+   D. Eine Netzwerkkomponente
+   E. Eine Datenbank-Instanz
 
-### 1. Was ist die Funktion von `terraform plan`?
+3. Welche Aussagen zu kubectl apply sind korrekt?
+   A. Nutzt deklarative Konfiguration
+   B. Ändert direkt den Container-Inhalt
+   C. Kann mit YAML-Dateien arbeiten
+   D. Wird für imperative Kommandos genutzt
+   E. Funktioniert nur mit Pods
 
-- A) Führt Änderungen direkt aus
-- B) Zeigt geplante Änderungen an
-- C) Entfernt alle Ressourcen
-- D) Validiert das Terraform-Setup
+4. Welche Ressourcen können Secrets in Kubernetes referenzieren?
+   A. Deployments
+   B. ConfigMaps
+   C. Volumes
+   D. Pods
+   E. Services
 
----
+5. Welche der folgenden YAML-Schlüssel sind gültig in einem Deployment?
+   A. replicas
+   B. containers
+   C. selector
+   D. metadata
+   E. nodeName
 
-### 2. Welche Aussagen zu Vagrant treffen zu?
+6. Was bewirkt kubectl expose?
+   A. Erstellt ein neues Deployment
+   B. Erstellt einen Service zu einem bestehenden Pod/Deployment
+   C. Skaliert eine Anwendung
+   D. Öffnet ein Volume
+   E. Bindet eine ConfigMap ein
 
-- A) Vagrant nutzt SSH zur VM-Verwaltung
-- B) Vagrant ersetzt Docker vollständig
-- C) Vagrant kann mit VirtualBox arbeiten
-- D) Vagrant nutzt YAML zur Konfiguration
+7. Welche Service-Typen gibt es in Kubernetes?
+   A. NodePort
+   B. LoadBalancer
+   C. ClusterIP
+   D. ExternalIP
+   E. InternalDNS
 
----
+8. Welche Möglichkeiten gibt es, ein Container-Image zu definieren?
+   A. Über kubectl run
+   B. In der Deployment-YAML unter spec.template.spec.containers.image
+   C. Über ein ConfigMap-Volume
+   D. Direkt per docker pull
+   E. Durch Helm-Charts
 
-### 3. Was zeichnet eine Immutable Infrastructure aus?
+9. Welche Befehle zeigen den Status eines Pods an?
+   A. kubectl get pods
+   B. kubectl status pod <name>
+   C. kubectl describe pod <name>
+   D. kubectl logs <name>
+   E. kubectl run status
 
-- A) Systeme werden manuell angepasst
-- B) Änderungen werden nur durch Rebuilds umgesetzt
-- C) Keine SSH-Zugriffe mehr notwendig
-- D) Logrotate wird automatisch konfiguriert
+10. Welche Vorteile bietet ein Deployment-Objekt?
+    A. Rollbacks
+    B. Versionierung von Docker-Images
+    C. Rolling Updates
+    D. Manuelle Containerstarts
+    E. Replikation
 
----
+✅ Lösungen
+✅ A, C, E
 
-### 4. Wozu dient die Datei `terraform.tfstate`?
+✅ B, C
 
-- A) Sie enthält Logs über vergangene Deployments
-- B) Sie beschreibt den aktuellen Infrastrukturzustand
-- C) Sie wird beim Destroy automatisch gelöscht
-- D) Sie ist optional und nur bei AWS nötig
+✅ A, C
 
----
+✅ A, C, D
 
-### 5. Welche Aussagen sind typisch für Terraform?
+✅ A, C, D
 
-- A) Terraform ist zustandslos
-- B) Module helfen bei Wiederverwendbarkeit
-- C) Mit `terraform destroy` werden Ressourcen gelöscht
-- D) Die Sprache ist YAML
+✅ B
 
----
+✅ A, B, C
 
-### ✅ Lösungen:
+✅ A, B, E
 
-1. B, D
-2. A, C
-3. B, C
-4. B, C
-5. B, C
+✅ A, C, D
+
+✅ A, C, E
+
