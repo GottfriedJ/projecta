@@ -1,0 +1,39 @@
+---
+- name: file-Modul
+  hosts: rhosts
+  gather_facts: yes
+
+  tasks:
+    - name: Erstelle ein Verzeichnis /var/www/myapp
+      become: true
+      ansible.builtin.file:
+        path: /var/www/myapp
+        state: directory
+        owner: www-data
+        group: www-data
+        mode: '0755'
+
+    - name: Leere Datei anlegen
+      become: true
+      ansible.builtin.file:
+        path: /tmp/testfile.txt
+        state: touch
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Lösche eine Datei
+      ansible.builtin.file:
+        path: /tmp/alte_datei.txt
+        state: absent
+
+    - name: check tempdir
+      command: ls -alh /tmp
+      register: output
+      tags: debug
+
+    - name: check tasks
+      debug:
+        msg: "{{ output }}"
+      tags: debug
+

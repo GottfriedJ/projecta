@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ web_title }}</title>
+</head>
+<body>
+<h1>{{ web_heading }}</h1>
+
+{% if ansible_facts['os_family'] == 'Debian' %}
+    <p>Dies ist ein <strong>Debian-basiertes</strong> System.</p>
+{% elif ansible_facts['os_family'] == 'RedHat' %}
+    <p>Dies ist ein <strong>RedHat-basiertes</strong> System.</p>
+{% else %}
+    <p>Dies ist ein <strong>unbekanntes</strong> Linux-System.</p>
+{% endif %}
+
+<p>Hostname: {{ ansible_facts['hostname'] }}</p>
+<p>IP-Adresse: {{ ansible_facts['default_ipv4']['address'] }}</p>
+</body>
+</html>

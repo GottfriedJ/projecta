@@ -21,7 +21,7 @@
 
 - name: Deploy index.html from template
   ansible.builtin.template:
-    src: index.html.j2
+    src: index2.html.j2
     dest: /var/www/html/index.html
     owner: www-data
     group: www-data
@@ -31,7 +31,7 @@
 
 - name: Debug Ausgabe des gerenderten Templates
   debug:
-    msg: "{{ lookup('template', 'templates/index.html.j2') }}"
+    msg: "{{ lookup('template', 'templates/index2.html.j2') }}"
   tags: index
 
 - name: Teste Apache-Konfiguration

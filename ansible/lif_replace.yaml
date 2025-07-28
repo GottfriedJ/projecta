@@ -1,0 +1,22 @@
+---
+- name: lif_replace_demo
+  hosts: rhosts
+  tasks:
+    - name: St elle sicher, dass eine Zeile in einer Konfigurationsdatei existiert
+      become: true
+      ansible.builtin.lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^PermitRootLogin'
+        line: 'PermitRootLogin no'
+        state: present
+        backup: yes
+
+    - name: check task1
+      command: ls -alh /etc/ssh/
+      register: output
+      tags: debug
+
+    - name: check task1
+      debug:
+        msg: "{{ output  }}"
+      tags: debug
