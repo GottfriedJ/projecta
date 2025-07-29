@@ -1,6 +1,38 @@
 version: '3.8'
 
 services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.20
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:7.17.20
+    container_name: logstash
+    volumes:
+      - ./logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+    ports:
+      - "5000:5000"     # Log Input
+      - "9600:9600"     # Monitoring API
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - /Users/LudwigU/docker_volumes/grafana-data:/var/lib/grafana
+
   prometheus:
     image: prom/prometheus:latest
     container_name: prometheus
@@ -9,14 +41,6 @@ services:
     ports:
       - "9090:9090"
 
-  grafana:
-    image: grafana/grafana:latest
-    container_name: grafana
-    volumes:
-      - /Users/LudwigU/docker_volumes/grafana-data:/var/lib/grafana
-    ports:
-      - "3000:3000"
-
   node_exporter:
     image: prom/node-exporter:latest
     container_name: node_exporter
@@ -24,4 +48,7 @@ services:
       - "9100:9100"
     restart: unless-stopped
     pid: "host"
-#    network_mode: "host"  # Auf Linux sinnvoll, auf Mac/Windows unnötig
+
+volumes:
+  esdata:
+#  grafana_data:
