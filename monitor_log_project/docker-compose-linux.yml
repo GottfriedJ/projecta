@@ -4,6 +4,38 @@ networks:
   monitor-net:
 
 services:
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.20
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+    networks:
+      - monitor-net
+
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:7.17.20
+    container_name: logstash
+    volumes:
+      - ./logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+    ports:
+      - "5000:5000"     # Log Input
+      - "9600:9600"     # Monitoring API
+      - "5044:5044"     # Monitoring API
+    networks:
+      - monitor-net
+
+
   prometheus:
     image: prom/prometheus:latest
     container_name: prometheus
@@ -31,3 +63,6 @@ services:
     pid: "host"
     networks:
       - monitor-net
+
+volumes:
+  esdata:
