@@ -1,4 +1,4 @@
-# LPI-701-100 Practice Exam Answers
+# LPI-701-100 Full Practice Exam Answers
 
 ### 1. Welche der folgenden Aussagen zu Docker-Containern sind korrekt? (2 richtige Antworten)
 **Correct Answers:** c, a

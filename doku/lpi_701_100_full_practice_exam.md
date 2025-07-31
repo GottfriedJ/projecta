@@ -1,4 +1,4 @@
-# LPI-701-100 Practice Exam
+# LPI-701-100 Full Practice Exam
 
 ### 1. Welche der folgenden Aussagen zu Docker-Containern sind korrekt? (2 richtige Antworten)
 - a) Container enthalten nur die Anwendung und ihre Abhängigkeiten
