@@ -1,0 +1,4 @@
+FROM ubuntu
+COPY data/ /data
+VOLUME /data -
+CMD /bin/bash -c "echo 'Hello World'; sleep infinity"
