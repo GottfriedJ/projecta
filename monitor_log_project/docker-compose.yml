@@ -40,14 +40,21 @@ services:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
       - "9090:9090"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"  # Required for macOS compatibility
 
   node_exporter:
     image: prom/node-exporter:latest
     container_name: node_exporter
+    restart: unless-stopped
+  # Remove these problematic lines:
+  # pid: "host"
+  # volumes:
+  #   - /:/host:ro,rslave
+    command:
+      - '--path.rootfs=/'
     ports:
       - "9100:9100"
-    restart: unless-stopped
-    pid: "host"
 
 volumes:
   esdata:
