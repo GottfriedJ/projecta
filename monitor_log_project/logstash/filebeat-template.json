@@ -1,0 +1,11 @@
+{
+  "index_patterns": ["filebeat-logs-*"],
+  "mappings": {
+    "properties": {
+      "hostname": { "type": "keyword" },
+      "host_ip": { "type": "ip" },
+      "message": { "type": "text" },
+      "@timestamp": { "type": "date" }
+    }
+  }
+}

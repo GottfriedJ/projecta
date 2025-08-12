@@ -27,6 +27,7 @@ services:
     container_name: logstash
     volumes:
       - ./logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+      - ./logstash/filebeat-template.json:/usr/share/logstash/templates/filebeat-template.json
     ports:
       - "5000:5000"     # Log Input
       - "9600:9600"     # Monitoring API
