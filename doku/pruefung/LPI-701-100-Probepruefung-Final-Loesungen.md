@@ -1,22 +1,22 @@
 
-# LPI-701-100 Probeprüfung – Lösungen
+# LPI-701-100 Probeprüfung – Lösungen (mit Anzahl korrekter Antworten)
 
 ## 1. Software Engineering
 1: b  
 2: a  
 3: b  
-4: a  
+4: a, c  
 5: a  
-6: b  
+6: b, d  
 7: c  
 8: b  
 9: b  
-10: b  
+10: b, c  
 11: b  
 12: a  
 13: b  
 14: b  
-15: d  
+15: a, b, c  
 16: b  
 17: b  
 18: a  
@@ -30,7 +30,7 @@
 24: a  
 25: a  
 26: a  
-27: b  
+27: b, c  
 28: b  
 29: c  
 30: d  
@@ -58,15 +58,15 @@
 48: a  
 49: b  
 50: b  
-51: d  
+51: a, b, c  
 52: a  
 
 ## 5. Service Operations
 53: a  
 54: b  
 55: a  
-56: d  
-57: d  
+56: a, b, c  
+57: a, b, c  
 58: a  
-59: d  
+59: a, b, c  
 60: c  

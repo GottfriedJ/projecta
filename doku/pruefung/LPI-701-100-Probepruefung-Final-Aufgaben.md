@@ -1,5 +1,5 @@
 
-# LPI-701-100 Probeprüfung – Aufgaben
+# LPI-701-100 Probeprüfung – Aufgaben (mit Angabe der Anzahl richtiger Antworten)
 
 Dies ist eine vollständige Probeprüfung mit **60 Fragen**, verteilt nach der ungefähren Gewichtung der LPI-701-100-Prüfung:
 
@@ -16,126 +16,126 @@ Dies ist eine vollständige Probeprüfung mit **60 Fragen**, verteilt nach der u
 
 ## 1. Software Engineering (18 Fragen)
 
-**Frage 1:**  
+**Frage 1 (1 richtige Antwort):**  
 Welches Git-Kommando zeigt die Unterschiede zwischen Arbeitsverzeichnis und Staging-Area?  
 a) git diff --cached  
 b) git diff  
 c) git log -p  
 d) git status  
 
-**Frage 2:**  
+**Frage 2 (1 richtige Antwort):**  
 Welches CI/CD-Tool basiert stark auf "Pipelines as Code"?  
 a) Jenkins  
 b) Nagios  
 c) Prometheus  
 d) Terraform  
 
-**Frage 3:**  
+**Frage 3 (1 richtige Antwort):**  
 Welche Aussage zu Unit-Tests ist korrekt?  
 a) Testen die Integration mehrerer Module  
 b) Testen einzelne Funktionen oder Methoden  
 c) Werden nur manuell ausgeführt  
 d) Ersetzen Integrationstests  
 
-**Frage 4:**  
-Welcher Befehl verwirft die letzten lokalen Änderungen in Git?  
+**Frage 4 (2 richtige Antworten):**  
+Welche Befehle verwerfen lokale Änderungen in Git?  
 a) git reset --hard  
 b) git revert  
 c) git clean -fd  
 d) git stash apply  
 
-**Frage 5:**  
+**Frage 5 (1 richtige Antwort):**  
 Welche Eigenschaft beschreibt „idempotent“ in Ansible oder anderen Tools?  
 a) Ein Task kann mehrfach ausgeführt werden, ohne das Endergebnis zu verändern  
 b) Der Task wird nur einmal ausgeführt  
 c) Es gibt keine Seiteneffekte  
 d) Der Task benötigt zwingend Root-Rechte  
 
-**Frage 6:**  
+**Frage 6 (2 richtige Antworten):**  
 Welche Dateien sind typische Artefakte in einer CI/CD-Pipeline?  
 a) Quellcode  
 b) Build-Outputs (z. B. Binaries, Pakete)  
 c) Systemlogs  
 d) Testdatenbanken  
 
-**Frage 7:**  
+**Frage 7 (1 richtige Antwort):**  
 Welcher Git-Befehl kombiniert mehrere Commits in einem interaktiven Workflow?  
 a) git squash  
 b) git cherry-pick  
 c) git rebase -i  
 d) git merge --no-ff  
 
-**Frage 8:**  
+**Frage 8 (1 richtige Antwort):**  
 Welcher Statuscode von HTTP signalisiert „Created“?  
 a) 200  
 b) 201  
 c) 204  
 d) 404  
 
-**Frage 9:**  
+**Frage 9 (1 richtige Antwort):**  
 Welcher Vorteil hat REST gegenüber SOAP?  
 a) Binäres Protokoll  
 b) Plattformunabhängig, einfache JSON/XML-Nutzung  
 c) Mehr Sicherheit  
 d) Keine Authentifizierung nötig  
 
-**Frage 10:**  
-Welche Art von Tests prüft die Zusammenarbeit mehrerer Komponenten?  
+**Frage 10 (2 richtige Antworten):**  
+Welche Arten von Tests prüfen die Zusammenarbeit mehrerer Komponenten?  
 a) Unit-Tests  
 b) Integrationstests  
 c) Akzeptanztests  
 d) Benchmark-Tests  
 
-**Frage 11:**  
+**Frage 11 (1 richtige Antwort):**  
 Was macht `git cherry-pick`?  
 a) Holt Änderungen aus einem Remote-Repository  
 b) Wendet einen bestimmten Commit auf den aktuellen Branch an  
 c) Entfernt Commits aus der Historie  
 d) Zeigt Unterschiede zwischen Branches  
 
-**Frage 12:**  
+**Frage 12 (1 richtige Antwort):**  
 Welches Format wird üblicherweise für REST-Antworten verwendet?  
 a) JSON  
 b) CSV  
 c) YAML  
 d) INI  
 
-**Frage 13:**  
+**Frage 13 (1 richtige Antwort):**  
 Welcher Git-Befehl zeigt die Historie mit Änderungen an Dateien?  
 a) git diff  
 b) git log -p  
 c) git show HEAD  
 d) git blame  
 
-**Frage 14:**  
+**Frage 14 (1 richtige Antwort):**  
 Wie kann man eine lokale Branch-Referenz auf den Remote-Stand zurücksetzen?  
 a) git fetch --hard  
 b) git reset --hard origin/branch  
 c) git checkout -b branch  
 d) git clone --branch branch  
 
-**Frage 15:**  
-Welches Build-Tool wird häufig mit Java eingesetzt?  
+**Frage 15 (3 richtige Antworten):**  
+Welche Build-Tools werden häufig mit Java eingesetzt?  
 a) Maven  
 b) Gradle  
 c) Ant  
 d) Alle oben genannten  
 
-**Frage 16:**  
+**Frage 16 (1 richtige Antwort):**  
 Welche Aussage zu Git Submodules ist korrekt?  
 a) Sie werden automatisch bei `git clone` mitgeladen  
 b) Müssen mit `git submodule update --init` initialisiert werden  
 c) Dienen zum Zwischenspeichern von Commits  
 d) Können nicht versioniert werden  
 
-**Frage 17:**  
+**Frage 17 (1 richtige Antwort):**  
 Welche Art von Test stellt sicher, dass eine Anwendung den Anforderungen des Kunden entspricht?  
 a) Integrationstest  
 b) Akzeptanztest  
 c) Lasttest  
 d) Unit-Test  
 
-**Frage 18:**  
+**Frage 18 (1 richtige Antwort):**  
 Welcher Befehl zeigt an, welche Commits noch nicht gepusht wurden?  
 a) git log origin..HEAD  
 b) git status --unpushed  
@@ -146,112 +146,112 @@ d) git show remote
 
 ## 2. Container Management (16 Fragen)
 
-**Frage 19:**  
+**Frage 19 (1 richtige Antwort):**  
 Welcher Befehl zeigt alle laufenden Container an?  
 a) docker ps  
 b) docker images  
 c) docker exec  
 d) docker inspect  
 
-**Frage 20:**  
+**Frage 20 (1 richtige Antwort):**  
 Welche Kubernetes-Ressource stellt sicher, dass immer eine feste Anzahl an Pods läuft?  
 a) Deployment  
 b) StatefulSet  
 c) ReplicaSet  
 d) DaemonSet  
 
-**Frage 21:**  
+**Frage 21 (1 richtige Antwort):**  
 Welcher Docker-Befehl erstellt ein Image aus einem Dockerfile?  
 a) docker build  
 b) docker create  
 c) docker run  
 d) docker commit  
 
-**Frage 22:**  
+**Frage 22 (1 richtige Antwort):**  
 Welches Tool wird häufig für Container-Orchestrierung genutzt?  
 a) Kubernetes  
 b) Podman  
 c) Ansible  
 d) Terraform  
 
-**Frage 23:**  
+**Frage 23 (1 richtige Antwort):**  
 Welches Kubernetes-Objekt ist zuständig für das Load-Balancing von Pods?  
 a) Deployment  
 b) ReplicaSet  
 c) Service  
 d) ConfigMap  
 
-**Frage 24:**  
+**Frage 24 (1 richtige Antwort):**  
 Welcher Befehl startet einen Container im Hintergrund?  
 a) docker run -d  
 b) docker start -f  
 c) docker exec -d  
 d) docker up -d  
 
-**Frage 25:**  
+**Frage 25 (1 richtige Antwort):**  
 Wie kann man ein Volume an einen Container anhängen?  
 a) docker run -v /host:/container  
 b) docker attach volume  
 c) docker cp /host /container  
 d) docker mount volume  
 
-**Frage 26:**  
+**Frage 26 (1 richtige Antwort):**  
 Welche Aussage zu Kubernetes Namespaces ist korrekt?  
 a) Dienen der logischen Trennung von Ressourcen  
 b) Erhöhen die Sicherheit im Kernel  
 c) Werden nur für Storage verwendet  
 d) Müssen für jeden Pod definiert werden  
 
-**Frage 27:**  
-Welcher Docker-Befehl entfernt gestoppte Container?  
+**Frage 27 (2 richtige Antworten):**  
+Welche Docker-Befehle entfernen gestoppte Container?  
 a) docker clean  
 b) docker rm  
 c) docker prune  
 d) docker stop --remove  
 
-**Frage 28:**  
+**Frage 28 (1 richtige Antwort):**  
 Welche Ressource speichert Konfiguration in Kubernetes?  
 a) Secret  
 b) ConfigMap  
 c) Volume  
 d) Service  
 
-**Frage 29:**  
+**Frage 29 (1 richtige Antwort):**  
 Welcher Befehl zeigt Logs eines Containers an?  
 a) docker log  
 b) docker inspect logs  
 c) docker logs <id>  
 d) docker cat <id>  
 
-**Frage 30:**  
+**Frage 30 (1 richtige Antwort):**  
 Welcher Kubernetes-Typ garantiert, dass ein Pod auf jedem Node läuft?  
 a) Deployment  
 b) StatefulSet  
 c) ReplicaSet  
 d) DaemonSet  
 
-**Frage 31:**  
+**Frage 31 (1 richtige Antwort):**  
 Welche Aussage zu StatefulSets ist korrekt?  
 a) Sie garantieren identische Namen für Pods  
 b) Sie verwalten zustandsbehaftete Anwendungen  
 c) Sie sind nur für stateless Apps geeignet  
 d) Sie ersetzen Deployments vollständig  
 
-**Frage 32:**  
+**Frage 32 (1 richtige Antwort):**  
 Was macht `docker exec -it container bash`?  
 a) Startet einen neuen Container mit Bash  
 b) Öffnet ein interaktives Bash-Terminal in einem Container  
 c) Baut ein Image mit Bash-Support  
 d) Fügt ein Volume hinzu  
 
-**Frage 33:**  
+**Frage 33 (1 richtige Antwort):**  
 Welcher Kubernetes-Befehl zeigt laufende Pods an?  
 a) kubectl get pods  
 b) kubectl show pods  
 c) kubectl describe cluster  
 d) kubectl list pods  
 
-**Frage 34:**  
+**Frage 34 (1 richtige Antwort):**  
 Welche Komponente in Kubernetes plant Pods auf Nodes?  
 a) etcd  
 b) kubelet  
@@ -262,56 +262,56 @@ d) controller-manager
 
 ## 3. Machine Deployment (8 Fragen)
 
-**Frage 35:**  
+**Frage 35 (1 richtige Antwort):**  
 Welches Tool wird häufig für Infrastruktur als Code (IaC) genutzt?  
 a) Terraform  
 b) Docker  
 c) Ansible  
 d) Git  
 
-**Frage 36:**  
+**Frage 36 (1 richtige Antwort):**  
 Welche Cloud-Init Direktive definiert Benutzer, die beim ersten Booten erstellt werden sollen?  
 a) users:  
 b) write_files:  
 c) packages:  
 d) runcmd:  
 
-**Frage 37:**  
+**Frage 37 (1 richtige Antwort):**  
 Welches Virtualisierungs-Tool nutzt Vagrant standardmäßig?  
 a) VMware  
 b) VirtualBox  
 c) Hyper-V  
 d) KVM  
 
-**Frage 38:**  
+**Frage 38 (1 richtige Antwort):**  
 Welche Eigenschaft hat ein „Immutable Server“-Konzept?  
 a) Server werden nachträglich angepasst  
 b) Änderungen werden per SSH eingespielt  
 c) Server werden neu provisioniert statt angepasst  
 d) Konfiguration erfolgt manuell  
 
-**Frage 39:**  
+**Frage 39 (1 richtige Antwort):**  
 Welcher Befehl listet VMs bei VirtualBox?  
 a) VBoxManage list vms  
 b) vagrant status list  
 c) virsh list --all  
 d) vmctl status  
 
-**Frage 40:**  
+**Frage 40 (1 richtige Antwort):**  
 Welche Aussage zu Cloud-Init ist korrekt?  
 a) Kann nur auf AWS genutzt werden  
 b) Läuft beim ersten Boot-Prozess einer VM  
 c) Wird ausschließlich für Container genutzt  
 d) Ist ein Ansible-Modul  
 
-**Frage 41:**  
+**Frage 41 (1 richtige Antwort):**  
 Welcher Vagrant-Befehl startet eine VM?  
 a) vagrant run  
 b) vagrant up  
 c) vagrant start  
 d) vagrant boot  
 
-**Frage 42:**  
+**Frage 42 (1 richtige Antwort):**  
 Welche Datei definiert eine Vagrant-Umgebung?  
 a) Vagrantfile  
 b) vagrant.yml  
@@ -322,70 +322,70 @@ d) VBoxfile
 
 ## 4. Configuration Management (10 Fragen)
 
-**Frage 43:**  
+**Frage 43 (1 richtige Antwort):**  
 Welches Ansible-Modul installiert Pakete distributionsunabhängig?  
 a) apt  
 b) yum  
 c) package  
 d) dnf  
 
-**Frage 44:**  
+**Frage 44 (1 richtige Antwort):**  
 Wie führt man einen Dry-Run in Ansible aus?  
 a) ansible-playbook play.yml --dry-run  
 b) ansible-playbook play.yml --test  
 c) ansible-playbook play.yml --check  
 d) ansible-playbook play.yml --syntax-check  
 
-**Frage 45:**  
+**Frage 45 (1 richtige Antwort):**  
 Welcher Ansible-Befehl zeigt verfügbare Hosts an?  
 a) ansible-inventory --list  
 b) ansible hosts --all  
 c) ansible-playbook --list  
 d) ansible show inventory  
 
-**Frage 46:**  
+**Frage 46 (1 richtige Antwort):**  
 Welche Ansible-Variable hat die höchste Priorität?  
 a) Rollen-Defaults  
 b) Inventory-Variablen  
 c) Extra-Variablen (-e)  
 d) Variablen in Playbooks  
 
-**Frage 47:**  
+**Frage 47 (1 richtige Antwort):**  
 Welche Aussage zu Ansible ist korrekt?  
 a) Benötigt zwingend einen Agenten auf Zielsystemen  
 b) Arbeitet agentlos per SSH  
 c) Funktioniert nur mit Red Hat  
 d) Nutzt ausschließlich Windows-Systeme  
 
-**Frage 48:**  
+**Frage 48 (1 richtige Antwort):**  
 Welches Ansible-Modul bearbeitet INI-Dateien?  
 a) ini_file  
 b) file  
 c) config_file  
 d) lineinfile  
 
-**Frage 49:**  
+**Frage 49 (1 richtige Antwort):**  
 Welche YAML-Syntax ist korrekt?  
 a) key = value  
 b) key: value  
 c) key -> value  
 d) key(value)  
 
-**Frage 50:**  
+**Frage 50 (1 richtige Antwort):**  
 Welcher Ansible-Befehl verschlüsselt Dateien?  
 a) ansible encrypt  
 b) ansible-vault encrypt  
 c) ansible-vault lock  
 d) ansible lock  
 
-**Frage 51:**  
-Welches Ansible-Modul führt Shell-Befehle aus?  
+**Frage 51 (3 richtige Antworten):**  
+Welche Ansible-Module führen Shell-Befehle aus?  
 a) shell  
 b) command  
 c) script  
 d) Alle oben genannten  
 
-**Frage 52:**  
+**Frage 52 (1 richtige Antwort):**  
 Welche Datei enthält üblicherweise die Inventar-Informationen?  
 a) /etc/ansible/hosts  
 b) ansible.conf  
@@ -396,56 +396,56 @@ d) playbook.yml
 
 ## 5. Service Operations (8 Fragen)
 
-**Frage 53:**  
+**Frage 53 (1 richtige Antwort):**  
 Welcher Befehl zeigt Systemd-Logs der Priorität "warning" bis "emerg"?  
 a) journalctl -p warning..emerg  
 b) journalctl --priority=warning  
 c) dmesg --level=warning..emerg  
 d) systemctl status -p warning  
 
-**Frage 54:**  
+**Frage 54 (1 richtige Antwort):**  
 Welches Monitoring-Tool nutzt "exporter"-Konzepte zur Metriksammlung?  
 a) Nagios  
 b) Prometheus  
 c) Jenkins  
 d) Grafana  
 
-**Frage 55:**  
+**Frage 55 (1 richtige Antwort):**  
 Welches Tool dient zur Visualisierung von Metriken?  
 a) Grafana  
 b) Prometheus  
 c) Nagios  
 d) Kibana  
 
-**Frage 56:**  
-Welches Tool sammelt Logfiles zentralisiert?  
+**Frage 56 (3 richtige Antworten):**  
+Welche Tools sammeln Logfiles zentralisiert?  
 a) Filebeat  
 b) Logstash  
 c) Fluentd  
 d) Alle oben genannten  
 
-**Frage 57:**  
-Welches Kommando zeigt offene Netzwerkports unter Linux an?  
+**Frage 57 (3 richtige Antworten):**  
+Welche Kommandos zeigen offene Netzwerkports unter Linux an?  
 a) netstat -tulpen  
 b) ss -tuln  
 c) lsof -i  
 d) Alle oben genannten  
 
-**Frage 58:**  
+**Frage 58 (1 richtige Antwort):**  
 Welche Aussage zu „Pushgateway“ in Prometheus ist korrekt?  
 a) Dient zum Pushen kurzlebiger Jobs  
 b) Ersetzt Prometheus vollständig  
 c) Ist ein Visualisierungstool  
 d) Wird für Datenbanken genutzt  
 
-**Frage 59:**  
-Welcher Befehl zeigt den Status eines Systemd-Dienstes an?  
+**Frage 59 (3 richtige Antworten):**  
+Welche Befehle zeigen den Status eines Systemd-Dienstes an?  
 a) systemctl status <service>  
 b) systemctl show <service>  
 c) service <service> status  
 d) Alle oben genannten  
 
-**Frage 60:**  
+**Frage 60 (1 richtige Antwort):**  
 Welche Bedrohung gehört nicht zu den OWASP Top 10?  
 a) SQL-Injection  
 b) Cross-Site Scripting  
