@@ -17,3 +17,14 @@
 - 2 Container mit demselben Volune
 - cloud-init
 - Jenkins build stage --> Anforderungen im Jenkinsfile
+
+- gis stash "restore"
+- ansible copy --> owner, permissions
+- replicas (replicaSet)
+- cloud-init
+- docker vs vagrant
+- prometheus-URL: /metrics
+- packer
+- chef
+- filebeat
+- sql-injection
