@@ -20,7 +20,9 @@
 
 - gis stash "restore"
 - ansible copy --> owner, permissions
+- anible_ssh und vault
 - replicas (replicaSet)
+- _grokparsefailure
 - cloud-init
 - docker vs vagrant
 - prometheus-URL: /metrics
