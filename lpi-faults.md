@@ -20,13 +20,17 @@
 
 - gis stash "restore"
 - ansible copy --> owner, permissions
-- anible_ssh und vault
+- ansible-vault: --vault-password-file, --ansible_ssh_private_key_file
 - replicas (replicaSet)
 - _grokparsefailure
-- cloud-init
-- docker vs vagrant
 - prometheus-URL: /metrics
+- Jenkinsfile: wo?
+- Jenkins: selector
+- cloud-init
+- cloudfoundry
+- docker vs vagrant
 - packer
 - chef
 - filebeat
 - sql-injection
+
