@@ -8,7 +8,7 @@ Zum LPI-701-100-Examen die Fakten von heute:
 
 - die Punktanzahl pro Frage bei korrekter Antwort ist variabel
 
-- es gibt Multiple-Choice-Fragen derart, daß 4 - 5 Optionen angegeben sind und 2 - 3 korrekte selektiert werden müssen
+- es gibt Multiple-Choice-Fragen derart, daß 4 - 5 Optionen angegeben sind und genau 2 oder 3 korrekte selektiert werden müssen
 
 - es gibt Fragen mit nur einer Option derart, daß genau ein Wort oder nur eine Option von 4 - 5 richtig ist
 
