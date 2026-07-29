@@ -1,0 +1,47 @@
+AC
+
+E
+
+E
+
+B wegen global
+
+DE
+
+B
+
+CMD
+
+CDE
+
+D
+
+CD
+
+Env
+
+CE
+
+ABC
+
+E
+
+C
+
+B
+
+AB
+
+Always,Success
+
+VirtualBox, Docker; Hyper-V (Windows)
+
+ADD
+
+AE
+
+ABD
+
+DE
+
+
