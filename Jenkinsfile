@@ -20,11 +20,11 @@ pipeline {
           }
         }
         
-        stage('Show docker version') {
-          steps {
-            sh 'docker --version'
-          }
-       }
+//         stage('Show docker version') {
+//           steps {
+//             sh 'docker --version'
+//           }
+//        }
 //    
        stage('Compile') {
           steps {
