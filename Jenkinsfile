@@ -5,7 +5,7 @@ pipeline {
         stage('Test Java Zugriff') {
             steps {
                 script {
-                    echo "Teste Java-Verfügbarkeit superduperneu :-)"
+                    echo "Teste Java-Verfügbarkeit superduperold :-)"
                     sh 'java -version'
                 }
             }
@@ -20,11 +20,11 @@ pipeline {
           }
         }
         
-        stage('Show docker version') {
-          steps {
-            sh 'docker --version'
-          }
-       }
+//         stage('Show docker version') {
+//           steps {
+//             sh 'docker --version'
+//           }
+//        }
 //    
        stage('Compile') {
           steps {
